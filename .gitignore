@@ -4,3 +4,9 @@
 
 # LangGraph
 .langgraph_api/
+
+#Environment
+.venv/
+__pycache__/
+*.pyc
+.env
