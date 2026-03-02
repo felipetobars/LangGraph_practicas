@@ -11,6 +11,7 @@ uv venv
 ".venv/Scripts/activate"
 uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 uv add ipykernel --dev
+uv add grandalf --dev
 uv add langchain langgraph langchain-community langchain-google-genai langchain-ollama langchain-experimental langchain-openai python-dotenv
 ```
 
