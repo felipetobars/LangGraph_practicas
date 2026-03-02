@@ -35,3 +35,24 @@ Se debe crear un archivo de configuración *"langgraph.json"*.
 
 Ejecutar ```langgraph dev``` o con ```uv run langgraph dev```
 ![alt text](images_course/image3.png)
+
+## Clase 3: Ajuste de estructura del proyecto para uso de varios agentes
+
+```
+notebooks/
+    notebook.ipynb
+src/
+    agents/
+        __init__.py
+        main.py
+    api/
+        __init__.py        
+```
+En el .toml se debe indicar que los paquetes se encuentran en la carpeta src, y que se deben incluir todos los archivos:
+
+```[tool.setupstools.packages.find]
+where = ["src"]
+include = ["*"]
+```
+
+Para aplicar los cambios, se debe ejecutar ```uv pip install -e .```
