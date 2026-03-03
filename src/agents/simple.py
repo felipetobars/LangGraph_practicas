@@ -95,12 +95,12 @@ def node_1(state: State):
         new_state["my_age"] = random.randint(18, 30)
         new_state["courses_taken"] = ["Python", "Machine Learning", "LangGraph"]
 
-    human_msg = HumanMessage(content=f"Usa la información de los estados para entregar solamente una tabla con la información actualizada y dejar celdas vacías si no hay info (customer_name, courses_taken, my_age): estado anterior-{state} nuevo estado - {new_state} (extrae la llave y valor, no lo muestres como diccionario)")
-    new_state["messages"] = [human_msg]
+    human_msg = HumanMessage(content=f"estado anterior-{state} nuevo estado - {new_state} (extrae la llave y valor, no lo muestres como diccionario)")
+    system_prompt = SystemMessage(content="Eres un asistente que usa la información de los estados para entregar solamente una TABLA con la información actualizada y dejar celdas vacías si no hay info (customer_name, courses_taken, my_age).")   
+    new_state["messages"] = [system_prompt, human_msg]
     
     ai_message = gemma3_llm.invoke(new_state["messages"])
-    #ai_message = gemini25_flash_lite_llm.invoke(updated_history)
-    new_state["messages"] = [ai_message]
+    new_state["messages"] = [system_prompt, human_msg, ai_message]
     print(new_state)
     return new_state
 
