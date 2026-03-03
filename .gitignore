@@ -13,3 +13,6 @@ __pycache__/
 
 #Uv Build
 langgraph_project.egg-info/
+
+#Vector Stores
+*/chroma_db*/
