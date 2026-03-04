@@ -12,7 +12,7 @@ uv venv
 uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 uv add ipykernel --dev
 uv add grandalf --dev
-uv add langchain langgraph langchain-community langchain-google-genai langchain-ollama langchain-experimental langchain-openai python-dotenv pypdf chromadb langchain-chroma  "onnxruntime==1.19.2"
+uv add langchain langgraph langchain-community langchain-google-genai langchain-ollama langchain-experimental langchain-openai python-dotenv pypdf chromadb langchain-chroma  "onnxruntime==1.19.2" Jinja2
 ```
 
 También se necesatia el debugger propio de LangGraph, que puede ser instalado con ("--dev" indica que es una dependencia de desarrollo, no necesaria para producción):
