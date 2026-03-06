@@ -9,7 +9,8 @@
         "react": "./src/agents/react.py:agent",
         "booking": "./src/agents/support/nodes/booking/node.py:booking_node",
         "code_reviewer": "./src/agents/code_reviewer/agent.py:agent",
-        "orchestrator": "./src/agents/orchestrator.py:agent"
+        "orchestrator": "./src/agents/orchestrator.py:agent",
+        "eval_optim": "./src/agents/eval_optim.py:agent"
     },
     "env": ".env"
 }
