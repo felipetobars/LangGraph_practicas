@@ -1,7 +1,8 @@
 import os
 from agents.support.state import State
 from agents.support.nodes.extractor.prompt import SYSTEM_PROMPT
-from langchain_google_genai import ChatGoogleGenerativeAI
+#from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_ollama import ChatOllama
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 load_dotenv()
@@ -17,7 +18,8 @@ class ContactInfo(BaseModel):
     age: int = Field(description="The age of the person", ge=1, le=120)
     sentiment: str = Field(description="The sentiment of the conversation, e.g., positive, negative, neutral.")
 
-llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash-lite', google_api_key=os.getenv("GOOGLE_API_KEY"), temperature=0) 
+#llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash-lite', google_api_key=os.getenv("GOOGLE_API_KEY"), temperature=0) 
+llm = ChatOllama(model="qwen2.5-coder:1.5b", temperature=0)
 llm_with_structured_output = llm.with_structured_output(schema=ContactInfo)
 
 def extractor(state: State):
