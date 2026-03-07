@@ -16,8 +16,11 @@ dependencies = [
     "langchain-ollama>=1.0.1",
     "langchain-openai>=1.1.10",
     "langgraph>=1.0.9",
+    "langgraph-checkpoint-postgres>=3.0.4",
     "langgraph-cli[inmem]>=0.4.12",
     "onnxruntime==1.19.2",
+    "psycopg>=3.3.3",
+    "psycopg-binary>=3.3.3",
     "pypdf>=6.7.5",
     "python-dotenv>=1.2.1",
 ]

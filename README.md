@@ -13,7 +13,8 @@ uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu
 uv add ipykernel --dev
 uv add grandalf --dev
 uv add fastapi[standard]
-uv add redis
+uv add langgraph-checkpoint-postgres
+uv add psycopg psycopg-binary
 uv add langchain langgraph langchain-community langchain-google-genai langchain-ollama langchain-experimental langchain-openai python-dotenv pypdf chromadb langchain-chroma  "onnxruntime==1.19.2" Jinja2 
 ```
 

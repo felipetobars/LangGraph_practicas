@@ -20,6 +20,9 @@ def conversation(state: State):
     last_message = history[-1]  
     customer_name = state.get("customer_name", "unknown customer")
     ai_message = agent_rag.invoke({"messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": last_message.content}]})
-    print(ai_message["messages"][-1].content)
-    new_state["messages"] = [AIMessage(content=ai_message["messages"][-1].content)]
+
+    # Guarda el contenido de todos los mensajes generados por el agente
+    ai_contents = [msg.content for msg in ai_message["messages"]]
+    print(ai_contents)
+    new_state["messages"] = [AIMessage(content=content) for content in ai_contents]
     return new_state

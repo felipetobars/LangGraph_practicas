@@ -10,6 +10,7 @@
 __pycache__/
 *.pyc
 .env
+langgraph_test/
 
 #Uv Build
 langgraph_project.egg-info/
